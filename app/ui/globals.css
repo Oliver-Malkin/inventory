@@ -3,24 +3,6 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-    --color-Red: hsl(4, 72%, 56%);
-    --color-Green: hsl(124, 18%, 31%);
-    --color-Blue: hsl(205, 59%, 51%);
-    --color-Purple: hsl(276, 17%, 38%);
-    --color-Grey: hsl(138, 10%, 75%);
-    --color-Onyx: hsl(204, 5%, 21%);
-    --color-Black: hsl(225, 8%, 10%);
-    --color-White: hsl(0, 0%, 97%);
-
-    --color-Red-Dark: hsl(4, 72%, 46%);
-    --color-Green-Dark: hsl(124, 18%, 31%);
-    --color-Blue-Dark: hsl(205, 59%, 41%);
-    --color-Purple-Dark: hsl(276, 17%, 28%);
-    --color-Grey-Dark: hsl(138, 10%, 65%);
-    --color-Onyx-Dark: hsl(204, 5%, 11%);
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -59,6 +41,10 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  --color-button-selected-background: var(--button-selected-background);
+  --color-button-selected: var(--button-selected);
+  --color-grey: var(--grey);
 }
 
 :root {
@@ -86,7 +72,7 @@
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
+  --sidebar: oklch(86.686% 0.0001 271.152);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
   --sidebar-primary-foreground: oklch(0.985 0 0);
@@ -94,10 +80,37 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  --button-selected-background: var(--transparent-30);
+  --button-selected: var(--color-blue-600);
+  --grey: var(--color-Grey);
+
+  --color-White-1: oklch(1 0 0);
+  --color-White-2: oklch(0.97 0 0);
+  --color-White-3: oklch(0.922 0 0);
+  --color-Gray-1:  oklch(0.708 0 0);
+  --color-Gray-2:  oklch(0.556 0 0);
+  --color-Gray-3:  oklch(0.269 0 0);
+  --color-Black-1: oklch(0.205 0 0);
+
+  --color-Red:    oklch(0.616 0.189 028.08);
+  --colour-Orange:oklch(0.769 0.188 70.08);
+  --color-Green:  oklch(0.448 0.053 146.43);
+  --color-Blue:   oklch(0.623 0.124 243.78);
+  --color-Purple: oklch(0.464 0.057 311.65);
+  --color-Grey:   oklch(0.751 0.000 271.15);
+  --color-Onyx:   oklch(0.330 0.005 236.90);
+
+  --transparent-5: oklch(1 0 0 / 5%);
+  --transparent-10: oklch(1 0 0 / 10%);
+  --transparent-15: oklch(1 0 0 / 15%);
+  --transparent-20: oklch(1 0 0 / 20%);
+  --transparent-25: oklch(1 0 0 / 25%);
+  --transparent-30: oklch(1 0 0 / 30%);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: oklch(29.313% 0.00003 271.152);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -120,7 +133,7 @@
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
+  --sidebar: oklch(24.354% 0.00003 271.152);
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.985 0 0);
@@ -128,6 +141,33 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  --button-selected-background: var(--transparent-10);
+  --button-selected: var(--color-blue-500);
+  --grey: var(--color-Grey);
+
+  --color-White-1: oklch(1 0 0);
+  --color-White-2: oklch(0.97 0 0);
+  --color-White-3: oklch(0.922 0 0);
+  --color-Gray-1:  oklch(0.708 0 0);
+  --color-Gray-2:  oklch(0.556 0 0);
+  --color-Gray-3:  oklch(0.269 0 0);
+  --color-Black-1: oklch(0.205 0 0);
+
+  --color-Red:    oklch(0.548 0.196 029.15);
+  --colour-Orange:oklch(0.653 0.147 064.95);
+  --color-Green:  oklch(0.448 0.054 146.43);
+  --color-Blue:   oklch(0.534 0.107 243.43);
+  --color-Purple: oklch(0.378 0.046 311.41);
+  --color-Grey:   oklch(0.673 0.000 271.15);
+  --color-Onyx:   oklch(0.225 0.002 248.17);
+
+  --transparent-5: oklch(1 0 0 / 5%);
+  --transparent-10: oklch(1 0 0 / 10%);
+  --transparent-15: oklch(1 0 0 / 15%);
+  --transparent-20: oklch(1 0 0 / 20%);
+  --transparent-25: oklch(1 0 0 / 25%);
+  --transparent-30: oklch(1 0 0 / 30%);
 }
 
 @layer base {

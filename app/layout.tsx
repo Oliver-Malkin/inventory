@@ -1,4 +1,4 @@
-import '@/app/ui/global.css';
+import '@/app/ui/globals.css';
 
 import { opensans } from '@/app/ui/fonts';
 import { Metadata } from "next";
