@@ -102,12 +102,26 @@ model Apikey {
   @@map("apikey")
 }
 
-model Components {
-  id   String @id @default(uuid())
-  name String
+model Component {
+  id         String   @id @default(uuid())
+  name       String
+  quantity   Int      @default(0)
+  attributes Json?
+  datasheet  String?
+  link       String?
+  image      String?
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId String
 }
 
-model Categories {
-  id   String @id @default(uuid())
-  name String // A friendly name for the category such as Lighting, Logic etc
+model Category {
+  id       String     @id @default(uuid())
+  name     String
+  parentId String?
+  parent   Category?  @relation("CatToSubCat", fields: [parentId], references: [id], onDelete: Cascade)
+  child    Category[] @relation("CatToSubCat")
+
+  component Component[]
+
+  @@unique([name])
 }

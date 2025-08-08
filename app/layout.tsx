@@ -22,6 +22,7 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <body className={`${opensans.className} bg-White dark:bg-Onyx`}>
         <ThemeProvider
+          disableTransitionOnChange
           attribute="class"
           defaultTheme="light"
           enableSystem={true}

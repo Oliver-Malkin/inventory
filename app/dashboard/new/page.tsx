@@ -1,3 +1,4 @@
+import AddNewForm from "@/app/ui/dashboard/new/new-component-form";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,8 +7,6 @@ export const metadata: Metadata = {
 
 export default function Dashboard() {
   return (
-    <main>
-      <h1>New item creation page</h1>
-    </main>
+    <AddNewForm />
   );
 }

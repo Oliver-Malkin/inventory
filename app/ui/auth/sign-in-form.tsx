@@ -1,19 +1,35 @@
 'use client';
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"; 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
+import { z } from "zod"
 import { signInFormSchema } from "@/lib/auth-schema";
+
 import { authClient } from "@/lib/auth-client";
 import { toast } from "react-toastify";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useRouter, useSearchParams } from "next/navigation";
 
-export default function SignInForm(){
+import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage
+} from "@/components/ui/form";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle
+} from "@/components/ui/card";
+
+export default function SignInForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const callbackURL = searchParams.get("callbackUrl")
@@ -53,7 +69,7 @@ export default function SignInForm(){
         pending: "Logging you in...",
         success: "Logged in",
         error: {
-          render({data}){
+          render({ data }) {
             return `${data}`
           }
         }
@@ -61,7 +77,7 @@ export default function SignInForm(){
     )
   }
 
-  return(
+  return (
     <Card className="w-full max-w-[95%] md:max-w-md">
       <CardHeader>
         <CardTitle>Sign in</CardTitle>
@@ -94,7 +110,7 @@ export default function SignInForm(){
                 </FormItem>
               )}
             />
-            <FormField              
+            <FormField
               control={form.control}
               name="rememberMe"
               render={({ field }) => (
@@ -105,13 +121,13 @@ export default function SignInForm(){
                       onCheckedChange={field.onChange}
                     />
                   </FormControl>
-                    <FormLabel>
-                      Remember me
-                    </FormLabel>
+                  <FormLabel>
+                    Remember me
+                  </FormLabel>
                 </FormItem>
               )}
             />
-            <Button className="w-full bg-Blue hover:bg-Blue-Dark" type="submit">Sign in</Button>
+            <Button className="button-submit" type="submit">Sign in</Button>
           </form>
         </Form>
       </CardContent>

@@ -108,7 +108,7 @@ export default function RegistrationForm() {
                 </FormItem>
               )}
             />
-            <Button className="w-full bg-Blue hover:bg-Blue-Dark" type="submit">Register</Button>
+            <Button className="w-full bg-button-submit hover:bg-button-submit-hover" type="submit">Register</Button>
           </form>
         </Form>
       </CardContent>

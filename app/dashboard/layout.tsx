@@ -7,13 +7,15 @@ export default function Layout({
 }
 ) {
   return (
-    <div className="flex h-screen md:flex-row sm:overflow-hidden">
+    <main className="flex flex-row h-screen">
       <div className="flex flex-col grow">
         <Header />
-        <div className="flex-grow p-4 md:overflow-y-auto">
-          {children}
+        <div className="flex-grow p-4 overflow-y-auto">
+          <div className="flex flex-row max-w-[95%] justify-center items-center overflow-y-auto">
+            {children}
+          </div>
         </div>
       </div>
-    </div>
+    </main>
   )
 }

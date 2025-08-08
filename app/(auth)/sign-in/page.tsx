@@ -1,4 +1,4 @@
-import SignInForm from "@/app/ui/sign-in-form";
+import SignInForm from "@/app/ui/auth/sign-in-form";
 import { auth } from "@/lib/auth";
 import { Metadata } from "next";
 import { headers } from "next/headers";

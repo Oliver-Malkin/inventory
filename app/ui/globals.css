@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+.button-submit {
+  @apply w-full bg-button-submit hover:bg-button-submit-hover;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -45,6 +49,8 @@
   --color-button-selected-background: var(--button-selected-background);
   --color-button-selected: var(--button-selected);
   --color-grey: var(--grey);
+  --color-button-submit: var(--button-submit);
+  --color-button-submit-hover: var(--button-submit-hover);
 }
 
 :root {
@@ -83,6 +89,9 @@
 
   --button-selected-background: var(--transparent-30);
   --button-selected: var(--color-blue-600);
+  --button-submit: var(--color-Blue);
+  --button-submit-hover: var(--color-Blue-Dark);
+
   --grey: var(--color-Grey);
 
   --color-White-1: oklch(1 0 0);
@@ -100,6 +109,14 @@
   --color-Purple: oklch(0.464 0.057 311.65);
   --color-Grey:   oklch(0.751 0.000 271.15);
   --color-Onyx:   oklch(0.330 0.005 236.90);
+
+  --color-Red-Dark:    oklch(0.548 0.196 029.15);
+  --colour-Orange-Dark:oklch(0.653 0.147 064.95);
+  --color-Green-Dark:  oklch(0.448 0.054 146.43);
+  --color-Blue-Dark:   oklch(0.534 0.107 243.43);
+  --color-Purple-Dark: oklch(0.378 0.046 311.41);
+  --color-Grey-Dark:   oklch(0.673 0.000 271.15);
+  --color-Onyx-Dark:   oklch(0.225 0.002 248.17);
 
   --transparent-5: oklch(1 0 0 / 5%);
   --transparent-10: oklch(1 0 0 / 10%);
@@ -144,7 +161,10 @@
 
   --button-selected-background: var(--transparent-10);
   --button-selected: var(--color-blue-500);
-  --grey: var(--color-Grey);
+  --button-submit: var(--color-Blue);
+  --button-submit-hover: var(--color-Blue-Dark);
+
+  --grey: var(--color-Grey-Dark);
 
   --color-White-1: oklch(1 0 0);
   --color-White-2: oklch(0.97 0 0);
@@ -154,13 +174,21 @@
   --color-Gray-3:  oklch(0.269 0 0);
   --color-Black-1: oklch(0.205 0 0);
 
-  --color-Red:    oklch(0.548 0.196 029.15);
-  --colour-Orange:oklch(0.653 0.147 064.95);
-  --color-Green:  oklch(0.448 0.054 146.43);
-  --color-Blue:   oklch(0.534 0.107 243.43);
-  --color-Purple: oklch(0.378 0.046 311.41);
-  --color-Grey:   oklch(0.673 0.000 271.15);
-  --color-Onyx:   oklch(0.225 0.002 248.17);
+  --color-Red:    oklch(0.616 0.189 028.08);
+  --colour-Orange:oklch(0.769 0.188 70.08);
+  --color-Green:  oklch(0.448 0.053 146.43);
+  --color-Blue:   oklch(0.623 0.124 243.78);
+  --color-Purple: oklch(0.464 0.057 311.65);
+  --color-Grey:   oklch(0.751 0.000 271.15);
+  --color-Onyx:   oklch(0.330 0.005 236.90);
+
+  --color-Red-Dark:    oklch(0.548 0.196 029.15);
+  --colour-Orange-Dark:oklch(0.653 0.147 064.95);
+  --color-Green-Dark:  oklch(0.448 0.054 146.43);
+  --color-Blue-Dark:   oklch(0.534 0.107 243.43);
+  --color-Purple-Dark: oklch(0.378 0.046 311.41);
+  --color-Grey-Dark:   oklch(0.673 0.000 271.15);
+  --color-Onyx-Dark:   oklch(0.225 0.002 248.17);
 
   --transparent-5: oklch(1 0 0 / 5%);
   --transparent-10: oklch(1 0 0 / 10%);
