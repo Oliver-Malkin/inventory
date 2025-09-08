@@ -7,6 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// Better auth
 model User {
   id            String    @id
   name          String
@@ -102,26 +103,29 @@ model Apikey {
   @@map("apikey")
 }
 
+// Inventory
 model Component {
   id         String   @id @default(uuid())
-  name       String
+  name       String   @unique @db.Citext
   quantity   Int      @default(0)
   attributes Json?
   datasheet  String?
   link       String?
   image      String?
-  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Restrict)
   categoryId String
 }
 
 model Category {
   id       String     @id @default(uuid())
-  name     String
+  name     String     @db.Citext
   parentId String?
-  parent   Category?  @relation("CatToSubCat", fields: [parentId], references: [id], onDelete: Cascade)
-  child    Category[] @relation("CatToSubCat")
+  parent   Category?  @relation("CategoryToCategory", fields: [parentId], references: [id], onDelete: Cascade)
+  child    Category[] @relation("CategoryToCategory")
 
   component Component[]
+
+  attributes Json?
 
   @@unique([name])
 }

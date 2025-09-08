@@ -7,9 +7,9 @@ import { z } from "zod";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
-import { signUpFormSchema } from "@/lib/auth-schema";
+import { signUpFormSchema } from "@/lib/auth/auth-schema";
 import { Metadata } from "next";
-import { authClient } from "@/lib/auth-client";
+import { authClient } from "@/lib/auth/auth-client";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 
@@ -113,7 +113,7 @@ export default function RegistrationForm() {
         </Form>
       </CardContent>
       <CardFooter className="w-full justify-center items-center">
-        <p>Minecraft server manager</p>
+        <p>Inventory management system</p>
       </CardFooter>
     </Card>
   )

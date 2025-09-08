@@ -1,9 +1,9 @@
-import '@/app/ui/globals.css';
+import '@/components/misc/globals.css';
 
-import { opensans } from '@/app/ui/fonts';
+import { opensans } from '@/components/misc/fonts';
 import { Metadata } from "next";
 import { ThemeProvider } from 'next-themes';
-import Toaster from '@/app/ui/toaster';
+import Toaster from '@/components/misc/toaster';
 
 export const metadata: Metadata = {
   title: {

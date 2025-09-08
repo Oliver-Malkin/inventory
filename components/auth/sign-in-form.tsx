@@ -3,9 +3,9 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form";
 import { z } from "zod"
-import { signInFormSchema } from "@/lib/auth-schema";
+import { signInFormSchema } from "@/lib/auth/auth-schema";
 
-import { authClient } from "@/lib/auth-client";
+import { authClient } from "@/lib/auth/auth-client";
 import { toast } from "react-toastify";
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -132,7 +132,7 @@ export default function SignInForm() {
         </Form>
       </CardContent>
       <CardFooter className="w-full justify-center items-center">
-        <p>Minecraft server manager</p>
+        <p>Inventory management system</p>
       </CardFooter>
     </Card>
   )

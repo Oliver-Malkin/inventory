@@ -4,7 +4,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 .button-submit {
-  @apply w-full bg-button-submit hover:bg-button-submit-hover;
+  @apply bg-button-submit hover:bg-button-submit-hover;
 }
 
 @theme inline {
